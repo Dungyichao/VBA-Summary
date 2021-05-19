@@ -2,7 +2,9 @@
 
 ## 1. SQL Connection
 
-Reference: 'https://www.access-programmers.co.uk/forums/threads/how-to-make-an-ado-connection-public.167811/
+Reference: 
+https://www.access-programmers.co.uk/forums/threads/how-to-make-an-ado-connection-public.167811/
+https://stackoverflow.com/questions/34389720/connection-string-for-sql-server-2014-express-vba
 ```VBA
 'Tools > References > Check the checkbox in front of "Microsoft ActiveX Data Objects 2.5 Library"
 Dim Conn1 As ADODB.Connection
