@@ -62,11 +62,18 @@ Sub Button1_Click()
 End Sub
 
 Function Record_Exist(LINE_ID As String, WINDER As String, END_NO As String, LOT_NO As String) As Integer
- Set Rs1 = Conn1.Execute("SELECT * FROM [DCSPOY1].[dbo].[Dynafil]") 
+
+ Dim SELECT_STRING As String
+ SELECT_STRING = "SELECT * FROM [DCSPOY1].[dbo].[Dynafil] WHERE LINE_ID='" & LINE_ID & "' AND WINDER='" & WINDER & "'"
+ 
+ Rs1.Open SELECT_STRING, Conn1, adOpenStatic
+ 
  If Rs1.RecordCount < 0 Then ' Evaluate argument.
-  Exit Function ' Exit to calling procedure.
+    Record_Exist = -1
+  'Exit Function ' Exit to calling procedure.
  Else
   Record_Exist = Rs1.RecordCount
+  
  End If
 End Function
 ```
